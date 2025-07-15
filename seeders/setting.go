@@ -29,13 +29,16 @@ func SeedSettings() {
 
 	for _, setting := range settings {
 		var existing models.Setting
-		err := database.DB.Where("key = ?", setting.Key).First(&existing).Error
-		if err != nil {
-			if err := database.DB.Create(&setting).Error; err != nil {
-				log.Printf("❌ Gagal menyimpan setting '%s': %v", setting.Key, err)
-			} else {
-				log.Printf("✅ Setting '%s' berhasil ditambahkan", setting.Key)
-			}
+		err := database.DB.Where("`key` = ?", setting.Key).First(&existing).Error
+		if err == nil {
+			log.Printf("ℹ️  Setting '%s' sudah ada, skip", setting.Key)
+			continue
+		}
+
+		if err := database.DB.Create(&setting).Error; err != nil {
+			log.Printf("❌ Gagal menyimpan setting '%s': %v", setting.Key, err)
+		} else {
+			log.Printf("✅ Setting '%s' berhasil ditambahkan", setting.Key)
 		}
 	}
 }

@@ -12,6 +12,8 @@ import (
 	"github.com/joho/godotenv"
 
 	"gobackend/database"
+	"gobackend/src/auth"
+	"gobackend/src/settings"
 	"gobackend/src/users"
 
 	"gobackend/seeders"
@@ -49,6 +51,8 @@ func main() {
 	// 📦 Routing
 	api := app.Group("/api")
 	users.RegisterRoutes(api)
+	auth.RegisterRoutes(api)
+	settings.RegisterRoutes(api)
 
 	// Jalankan server
 	port := os.Getenv("PORT")
