@@ -1,5 +1,53 @@
-# Object file
-*.o
+# ---------------------------------
+# Go Build & Test Artifacts
+# ---------------------------------
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
 
-# Ada Library Information
-*.ali
+# Coverage files
+*.cover
+coverage.out
+
+# Build output (binary)
+app
+bin/
+dist/
+
+# Go workspace (Go 1.18+)
+go.work
+go.work.sum
+
+# ---------------------------------
+# Dependency Management
+# ---------------------------------
+vendor/  # kalau kamu tidak commit vendor
+
+# ---------------------------------
+# Environment & Secrets
+# ---------------------------------
+.env
+
+# ---------------------------------
+# Editor / IDE Settings
+# ---------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---------------------------------
+# System Files
+# ---------------------------------
+.DS_Store
+Thumbs.db
+
+# ---------------------------------
+# Tools (Air, Reflex, etc.)
+# ---------------------------------
+.air.toml
+tmp/
