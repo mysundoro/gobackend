@@ -2,7 +2,7 @@
 
 GoBackend adalah backend API service menggunakan **Golang + Fiber**, dirancang modular dan siap produksi, dengan fitur lengkap seperti:
 
-- 🔐 Login & Register (password + Google OAuth)
+- 🔐 Login
 - ✉️ Reset Password via Email
 - 🧠 Akun diblokir sementara jika gagal login berulang
 - 📧 Email notifikasi: reset, blokir, unlock
@@ -14,7 +14,7 @@ GoBackend adalah backend API service menggunakan **Golang + Fiber**, dirancang m
 
 ## 🚀 Fitur Utama
 
-- ✅ Auth: Login, Register, Logout
+- ✅ Auth: Login
 - 🔐 Keamanan:
   - Blokir akun sementara jika gagal login >3x
   - Blokir IP jika mencoba brute force
